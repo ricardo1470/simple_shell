@@ -105,6 +105,7 @@ int main(int ac, char **av, char *environ[])
 		} else
 		{
 			isatty(STDIN_FILENO) ? write(STDOUT_FILENO, "\n", 1) : status;
+			free(buff);
 			exit(EXIT_SUCCESS);
 		}
 	} return (0);
