@@ -84,7 +84,7 @@ int main(int ac, char **av, char *environ[])
 			{	free(buff);
 				exit(EXIT_SUCCESS);
 			}
-			else if (buff && _strcmp(buff, "\n") && _strcmp(buff, " "))
+			else if (buff && _strcmp(buff, "\n"))
 			{	array = _split(buff);
 				if (array[0] == NULL)
 					break;
