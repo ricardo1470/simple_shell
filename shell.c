@@ -110,6 +110,6 @@ int main(int ac, char **av, char *environ[])
 			free(buff), exit(exvalue);
 		}
 	}
-	free(buff);
+	doublefree(array);
 	return (exvalue);
 }
