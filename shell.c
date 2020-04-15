@@ -73,7 +73,7 @@ int main(int ac, char **av, char *environ[])
 	pid_t child;
 	char **array = NULL, *buff = NULL, errors[50];
 	size_t len = 0;
-	int status = 0, execs = 0;
+	int status = 0, execs = 0, exvalue = 0;
 
 	(void) ac;
 	while (1)
@@ -82,7 +82,7 @@ int main(int ac, char **av, char *environ[])
 		if (getline(&buff, &len, stdin) != EOF)
 		{
 			if (!_strcmp(buff, "exit\n"))
-				free(buff), exit(EXIT_SUCCESS);
+				free(buff), exit(exvalue);
 
 			else if (!_strcmp(buff, "env\n"))
 			_environ(environ);
@@ -90,8 +90,7 @@ int main(int ac, char **av, char *environ[])
 			{	array = _split(buff);
 				if (array[0] == NULL)
 					break;
-				child = fork();
-				execs++;
+				child = fork(), execs++;
 				if (child == 0)
 				{
 					array[0] = list_path(array[0], environ);
@@ -99,14 +98,16 @@ int main(int ac, char **av, char *environ[])
 					{	sprintf(errors, "%s: %d: %s: not found\n", av[0], execs, array[0]);
 						write(STDERR_FILENO, errors, _strlen(errors)), free(buff);
 						doublefree(array);
-						exit(128);
+						exit(127);
 					}
 				} else
-					wait(&status), doublefree(array);	}
+					wait(&status), doublefree(array);
+					if (WIFEXITED(status) && WEXITSTATUS(status) != 0)
+					exvalue = WEXITSTATUS(status);	}
 		} else
 		{
 			isatty(STDIN_FILENO) ? write(STDOUT_FILENO, "\n", 1) : status;
-			free(buff), exit(EXIT_SUCCESS);
+			free(buff), exit(exvalue);
 		}
-	} return (0);
+	} return (exvalue);
 }
