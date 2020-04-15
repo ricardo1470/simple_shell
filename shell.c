@@ -31,11 +31,11 @@ char **_split(char *av)
 	if (!buffer)
 		return (NULL);
 	_strcpy(buffer, av);
-	tok = strtok(av, " \t\n\r");
+	tok = strtok(av, " \t\n\r\a");
 	while (tok)
 	{
 		size++;
-		tok = strtok(NULL, " \t\n\r");
+		tok = strtok(NULL, " \t\n\r\a");
 	}
 	array = _calloc(sizeof(char *), (size + 1));
 	if (!array)
@@ -43,7 +43,7 @@ char **_split(char *av)
 		free(buffer);
 		return (NULL);
 	}
-	tok = strtok(buffer, " \t\n\r");
+	tok = strtok(buffer, " \t\n\r\a");
 	size = 0;
 	while (tok)
 	{
@@ -55,7 +55,7 @@ char **_split(char *av)
 			return (NULL);
 		}
 		_strcpy(array[size++], tok);
-		tok = strtok(NULL, " \t\n\r");
+		tok = strtok(NULL, " \t\n\r\a");
 	}
 	free(buffer);
 	return (array);
