@@ -51,5 +51,6 @@ int (*get_op_func(const char *s, int pos))(va_list);
 char *list_path(char array[], char *environ[]);
 char *_strdup(char *str);
 char *_getenv(const char *name);
+int _environ(char *environ[]);
 
 #endif /* HOLBERTON_H */
