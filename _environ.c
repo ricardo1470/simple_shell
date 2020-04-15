@@ -2,7 +2,7 @@ include "holberton.h"
 
 /**
  * _environ - prints the environment
- *
+ *@environ: environ 
  * Return: Always 0.
  */
 int _environ(char *environ[])
