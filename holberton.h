@@ -10,6 +10,7 @@
 #include <sys/types.h>
 #include <sys/wait.h>
 #include <sys/stat.h>
+#include <signal.h>
 
 /**
  * struct Pf_func - format
@@ -52,5 +53,6 @@ char *list_path(char array[], char *environ[]);
 char *_strdup(char *str);
 char *_getenv(const char *name);
 int _environ(char *environ[]);
+void control(int signal);
 
 #endif /* HOLBERTON_H */
