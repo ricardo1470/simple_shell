@@ -37,14 +37,13 @@ char **_split(char *av)
 		size++;
 		tok = strtok(NULL, " \t\n\r\a");
 	}
-	array = _calloc((size + 1), sizeof(char *));
+	array = _calloc(sizeof(char *), (size + 1));
 	if (!array)
 	{
 		free(buffer);
 		return (NULL);
 	}
 	tok = strtok(buffer, " \t\n\r\a");
-	printf("%d", (int)size);
 	size = 0;
 	while (tok)
 	{
@@ -86,28 +85,30 @@ int main(int ac, char **av, char *environ[])
 
 			else if (!_strcmp(buff, "env\n"))
 			_environ(environ);
-			else if (buff && _strcmp(buff, "\n") && _strcmp(buff, " "))
+			else if (buff && _strcmp(buff, "\n"))
 			{	array = _split(buff);
-				if (array[0] == NULL)
-					break;
-				child = fork(), execs++;
-				if (child == 0)
+				if (array[0] != NULL)
 				{
-					array[0] = list_path(array[0], environ);
-					if (execve(array[0], array, environ) == -1)
-					{	sprintf(errors, "%s: %d: %s: not found\n", av[0], execs, array[0]);
-						write(STDERR_FILENO, errors, _strlen(errors)), free(buff);
-						doublefree(array);
-						exit(127);
-					}
-				} else
-					wait(&status), doublefree(array);
-					if (WIFEXITED(status) && WEXITSTATUS(status) != 0)
-					exvalue = WEXITSTATUS(status);	}
+					child = fork(), execs++;
+					if (child == 0)
+					{
+						array[0] = list_path(array[0], environ);
+						if (execve(array[0], array, environ) == -1)
+						{	sprintf(errors, "%s: %d: %s: not found\n", av[0], execs, array[0]);
+							write(STDERR_FILENO, errors, _strlen(errors)), free(buff);
+							doublefree(array);
+							exit(127);
+						}
+					} else
+						wait(&status), doublefree(array);
+						if (WIFEXITED(status) && WEXITSTATUS(status) != 0)
+						exvalue = WEXITSTATUS(status);	}
+				}
 		} else
 		{
 			isatty(STDIN_FILENO) ? write(STDOUT_FILENO, "\n", 1) : status;
 			free(buff), exit(exvalue);
 		}
-	} return (exvalue);
+	} 
+	return (exvalue);
 }
