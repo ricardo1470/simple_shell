@@ -37,15 +37,12 @@ char **_split(char *av)
 		size++;
 		tok = strtok(NULL, " \t\n\r");
 	}
-	if (!size)
+	array = _calloc(sizeof(char *), (size + 1));
+	if (!array)
 	{
 		free(buffer);
 		return (NULL);
 	}
-	array = _calloc(sizeof(char *), (size + 1));
-	if (!array)
-		free(buffer);
-		return (NULL);
 	tok = strtok(buffer, " \t\n\r");
 	size = 0;
 	while (tok)
@@ -87,9 +84,10 @@ int main(int ac, char **av, char *environ[])
 			{	free(buff);
 				exit(EXIT_SUCCESS);
 			}
-			array = _split(buff);
-			if (buff && _strcmp(buff, "\n") && array[0])
-			{
+			else if (buff && _strcmp(buff, "\n") && _strcmp(buff, " "))
+			{	array = _split(buff);
+				if (array[0] == NULL)
+					break;
 				child = fork();
 				execs++;
 				if (child == 0)
