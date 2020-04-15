@@ -75,6 +75,7 @@ int main(int ac, char **av, char *environ[])
 	int status = 0, execs = 0, exvalue = 0;
 
 	(void) ac;
+	signal(SIGINT, control);
 	while (1)
 	{
 	isatty(STDIN_FILENO) ? write(STDOUT_FILENO, "#cisfun$ ", 10) : status;
@@ -84,7 +85,7 @@ int main(int ac, char **av, char *environ[])
 				free(buff), exit(exvalue);
 
 			else if (!_strcmp(buff, "env\n"))
-			_environ(environ);
+				_environ(environ);
 			else if (buff && _strcmp(buff, "\n"))
 			{	array = _split(buff);
 				if (array[0] != NULL)
@@ -110,6 +111,18 @@ int main(int ac, char **av, char *environ[])
 			free(buff), exit(exvalue);
 		}
 	}
-	doublefree(array);
+	free(buff);
 	return (exvalue);
+}
+
+/**
+  * control - function for Ctrl + C
+  * @signal: int.
+  * Return: nothing.
+  */
+void control(int signal)
+{
+	(void)signal;
+	write(STDOUT_FILENO, "\n", 1);
+	write(STDOUT_FILENO, "#cisfun$ ", 10);
 }
