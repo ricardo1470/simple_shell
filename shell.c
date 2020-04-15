@@ -81,9 +81,8 @@ int main(int ac, char **av, char *environ[])
 		if (getline(&buff, &len, stdin) != EOF)
 		{
 			if (!_strcmp(buff, "exit\n"))
-			{	free(buff);
-				exit(EXIT_SUCCESS);
-			}
+				free(buff), exit(EXIT_SUCCESS);
+
 			else if (!_strcmp(buff, "env\n"))
 			_environ(environ);
 			else if (buff && _strcmp(buff, "\n") && _strcmp(buff, " "))
@@ -102,13 +101,11 @@ int main(int ac, char **av, char *environ[])
 						exit(128);
 					}
 				} else
-					wait(&status);
-					doublefree(array);	}
+					wait(&status), doublefree(array);	}
 		} else
 		{
 			isatty(STDIN_FILENO) ? write(STDOUT_FILENO, "\n", 1) : status;
-			free(buff);
-			exit(EXIT_SUCCESS);
+			free(buff), exit(EXIT_SUCCESS);
 		}
 	} return (0);
 }
