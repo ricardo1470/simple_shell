@@ -75,7 +75,6 @@ int main(int ac, char **av, char *environ[])
 	int status = 0, execs = 0, exvalue = 0;
 
 	(void) ac;
-	
 	while (1)
 	{
 	isatty(STDIN_FILENO) ? write(STDOUT_FILENO, "#cisfun$ ", 10) : status;
@@ -102,7 +101,7 @@ int main(int ac, char **av, char *environ[])
 						exit(127);
 					}
 				} else
-					wait(&status), doublefree(array);	
+					wait(&status), doublefree(array);
 					if (WIFEXITED(status) && WEXITSTATUS(status) != 0)
 					exvalue = WEXITSTATUS(status);	}
 		} else
