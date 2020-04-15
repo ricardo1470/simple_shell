@@ -37,13 +37,14 @@ char **_split(char *av)
 		size++;
 		tok = strtok(NULL, " \t\n\r\a");
 	}
-	array = _calloc(sizeof(char *), (size + 1));
+	array = _calloc((size + 1), sizeof(char *));
 	if (!array)
 	{
 		free(buffer);
 		return (NULL);
 	}
 	tok = strtok(buffer, " \t\n\r\a");
+	printf("%d", (int)size);
 	size = 0;
 	while (tok)
 	{
@@ -75,7 +76,6 @@ int main(int ac, char **av, char *environ[])
 	int status = 0, execs = 0;
 
 	(void) ac;
-	
 	while (1)
 	{
 	isatty(STDIN_FILENO) ? write(STDOUT_FILENO, "#cisfun$ ", 10) : status;
