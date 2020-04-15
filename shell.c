@@ -89,8 +89,7 @@ int main(int ac, char **av, char *environ[])
 			{	array = _split(buff);
 				if (array[0] == NULL)
 					break;
-				child = fork();
-				execs++;
+				child = fork(), execs++;
 				if (child == 0)
 				{
 					array[0] = list_path(array[0], environ);
