@@ -75,6 +75,7 @@ int main(int ac, char **av, char *environ[])
 	int status = 0, execs = 0;
 
 	(void) ac;
+	isatty(STDIN_FILENO) == 0 ? status = 0 : status;
 	while (1)
 	{
 	isatty(STDIN_FILENO) ? write(STDOUT_FILENO, "#cisfun$ ", 10) : status;
