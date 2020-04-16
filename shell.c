@@ -61,6 +61,20 @@ char **_split(char *av)
 	free(buffer);
 	return (array);
 }
+int ver_espacios(char *buff)
+{
+	int cnt = 0, spaces = 0;
+
+	while (*(buff + cnt) != '\0')
+	{
+		if (*(buff + cnt) == 32)
+			spaces++;
+		cnt++;
+	}
+	if (strlen(buff) == (spaces + 1))
+	return (0);
+	return (1);
+}
 /**
  * main - simple shell
  * @ac: value
@@ -82,8 +96,10 @@ int main(int ac, char **av, char *environ[])
 	isatty(STDIN_FILENO) ? write(STDOUT_FILENO, "#cisfun$ ", 10) : status;
 		if (getline(&buff, &len, stdin) != EOF)
 		{
+			if (ver_espacios(buff) == 0)
+				continue;
 			if (!_strncmp(buff, "exit\n"))
-				free(array), free(buff), exit(exvalue);
+				free(buff), exit(exvalue);
 			else if (!_strncmp(buff, "env\n"))
 				_environ(environ);
 			else if (buff && _strncmp(buff, "\n"))
