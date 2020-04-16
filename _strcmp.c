@@ -5,7 +5,7 @@
   * @s2: second string.
   * Return: .
   */
-int _strcmp(char *s1, char *s2)
+int _strncmp(char *s1, char *s2)
 {
 	int i, j;
 

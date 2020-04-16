@@ -17,7 +17,7 @@ char *list_path(char array[], char *environ[])
 	struct stat st;
 
 	for (i = 0; environ[i] != NULL; i++)
-		if (strncmp(environ[i], "PATH=", 5) == 0)
+		if (strncmp(environ[i], "PATH=", 4) == 0)
 			break;
 	tmp = _strdup(environ[i]);
 	token = strtok(tmp, ":");
@@ -42,3 +42,4 @@ char *list_path(char array[], char *environ[])
 	free(tmp);
 	return (array);
 }
+
