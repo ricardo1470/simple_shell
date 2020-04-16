@@ -72,7 +72,7 @@ int main(int ac, char **av, char *environ[])
 	pid_t child;
 	char **array = NULL, *buff = NULL, errors[50];
 	size_t len = 0;
-	int status = 0, execs = 0, exvalue = 0;
+	int status = 0, execs = 0, exvalue = 0, i = 0;
 
 	(void) ac;
 	signal(SIGINT, control);
@@ -98,6 +98,9 @@ int main(int ac, char **av, char *environ[])
 						{	sprintf(errors, "%s: %d: %s: not found\n", av[0], execs, array[0]);
 							write(STDERR_FILENO, errors, _strlen(errors)), free(buff);
 							doublefree(array);
+							i = 0;
+							while (errors[i])
+								errors[i++] = 0;
 							exit(127);
 						}
 					} else
