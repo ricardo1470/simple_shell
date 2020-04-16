@@ -61,7 +61,7 @@ char **_split(char *av)
 	free(buffer);
 	return (array);
 }
-int ver_espacios(char *buff)
+int check_spaces(char *buff)
 {
 	int cnt = 0, spaces = 0;
 
@@ -84,10 +84,9 @@ int ver_espacios(char *buff)
  */
 int main(int ac, char **av, char *environ[])
 {
-	pid_t child;
-	char **array = NULL, *buff = NULL, errors[50];
+	char **array = NULL, *buff = NULL;
 	size_t len = 0;
-	int status = 0, execs = 0, exvalue = 0, i = 0;
+	int status = 0, exvalue = 0, *pt = &exvalue;
 
 	(void) ac;
 	signal(SIGINT, control);
@@ -96,7 +95,7 @@ int main(int ac, char **av, char *environ[])
 	isatty(STDIN_FILENO) ? write(STDOUT_FILENO, "#cisfun$ ", 10) : status;
 		if (getline(&buff, &len, stdin) != EOF)
 		{
-			if (ver_espacios(buff) == 0)
+			if (check_spaces(buff) == 0)
 				continue;
 			if (!_strncmp(buff, "exit\n"))
 				free(buff), exit(exvalue);
@@ -105,25 +104,8 @@ int main(int ac, char **av, char *environ[])
 			else if (buff && _strncmp(buff, "\n"))
 			{	array = _split(buff);
 				if (array[0] != NULL)
-				{
-					child = fork(), execs++;
-					if (child == 0)
-					{
-						array[0] = list_path(array[0], environ);
-						if (execve(array[0], array, environ) == -1)
-						{	sprintf(errors, "%s: %d: %s: not found\n", av[0], execs, array[0]);
-							write(STDERR_FILENO, errors, _strlen(errors)), free(buff);
-							doublefree(array);
-							i = 0;
-							while (errors[i])
-								errors[i++] = 0;
-							exit(127);
-						}
-					} else
-						wait(&status), doublefree(array);
-						if (WIFEXITED(status) && WEXITSTATUS(status) != 0)
-						exvalue = WEXITSTATUS(status);	}
-				}
+				x(av, environ, array, buff, pt, status);
+			}
 		} else
 		{
 			isatty(STDIN_FILENO) ? write(STDOUT_FILENO, "\n", 1) : status;
