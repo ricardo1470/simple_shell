@@ -84,7 +84,6 @@ int main(int ac, char **av, char *environ[])
 		{
 			if (!_strncmp(buff, "exit\n"))
 				free(array), free(buff), exit(exvalue);
-
 			else if (!_strncmp(buff, "env\n"))
 				_environ(environ);
 			else if (buff && _strncmp(buff, "\n"))
@@ -112,7 +111,7 @@ int main(int ac, char **av, char *environ[])
 		} else
 		{
 			isatty(STDIN_FILENO) ? write(STDOUT_FILENO, "\n", 1) : status;
-			free(buff), exit(exvalue);
+			free(array), free(buff), exit(exvalue);
 		}
 	}
 	free(array), free(buff);
