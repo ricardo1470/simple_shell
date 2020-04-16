@@ -71,7 +71,7 @@ int ver_espacios(char *buff)
 			spaces++;
 		cnt++;
 	}
-	if (strlen(buff) == (spaces + 1))
+	if (_strlen(buff) == (spaces + 1))
 	return (0);
 	return (1);
 }
