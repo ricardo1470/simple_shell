@@ -112,7 +112,7 @@ int main(int ac, char **av, char *environ[])
 		} else
 		{
 			isatty(STDIN_FILENO) ? write(STDOUT_FILENO, "\n", 1) : status;
-			doublefree(array), free(buff), exit(exvalue);
+			free(buff), exit(exvalue);
 		}
 	}
 	free(array), free(buff);
