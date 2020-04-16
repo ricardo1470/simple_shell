@@ -57,6 +57,7 @@ char **_split(char *av)
 		_strcpy(array[size++], tok);
 		tok = strtok(NULL, " \t\n\r\a");
 	}
+	array[size] = NULL;
 	free(buffer);
 	return (array);
 }
@@ -81,12 +82,12 @@ int main(int ac, char **av, char *environ[])
 	isatty(STDIN_FILENO) ? write(STDOUT_FILENO, "#cisfun$ ", 10) : status;
 		if (getline(&buff, &len, stdin) != EOF)
 		{
-			if (!_strcmp(buff, "exit\n"))
-				free(buff), exit(exvalue);
+			if (!_strncmp(buff, "exit\n"))
+				free(array), free(buff), exit(exvalue);
 
-			else if (!_strcmp(buff, "env\n"))
+			else if (!_strncmp(buff, "env\n"))
 				_environ(environ);
-			else if (buff && _strcmp(buff, "\n"))
+			else if (buff && _strncmp(buff, "\n"))
 			{	array = _split(buff);
 				if (array[0] != NULL)
 				{
@@ -111,10 +112,10 @@ int main(int ac, char **av, char *environ[])
 		} else
 		{
 			isatty(STDIN_FILENO) ? write(STDOUT_FILENO, "\n", 1) : status;
-			free(buff), exit(exvalue);
+			doublefree(array), free(buff), exit(exvalue);
 		}
 	}
-	free(buff);
+	free(array), free(buff);
 	return (exvalue);
 }
 
