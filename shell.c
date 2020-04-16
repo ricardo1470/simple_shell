@@ -61,6 +61,11 @@ char **_split(char *av)
 	free(buffer);
 	return (array);
 }
+/**
+ * check_spaces - Check spaces
+ * @buff: buffer
+ * Return: 0
+ */
 int check_spaces(char *buff)
 {
 	int cnt = 0, spaces = 0;
