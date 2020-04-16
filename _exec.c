@@ -1,5 +1,14 @@
 #include "holberton.h"
-
+/**
+ * x - execute commands
+ * @av: pointer value
+ * @environ: Environment variable.
+ * @array: Command.
+ * @buff: Buffer.
+ * @pt: Exit pointer.
+ * @status: Status.
+ * Return: Always 0.
+ */
 int x(char **av, char **environ, char **array, char *buff, int *pt, int status)
 {
 pid_t child;
