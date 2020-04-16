@@ -54,6 +54,8 @@ char *_strdup(char *str);
 char *_getenv(const char *name);
 int _environ(char *environ[]);
 void control(int signal);
+void _exec(char **av, char **environ, char **array, char *buff, int *pt, int status);
+void doublefree(char **array);
 
 
 
