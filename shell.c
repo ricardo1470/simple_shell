@@ -120,7 +120,6 @@ int main(int ac, char **av, char *environ[])
 	free(array), free(buff);
 	return (exvalue);
 }
-
 /**
   * control - function for Ctrl + C
   * @signal: int.
