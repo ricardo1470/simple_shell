@@ -40,7 +40,6 @@ typedef struct list_s
 	struct list_s *next;
 } list_t;
 
-
 int _putchar(char c);
 char **_split(char *av);
 int _strlen(char *s);
@@ -56,7 +55,4 @@ int _environ(char *environ[]);
 void control(int signal);
 int x(char **av, char **environ, char **array, char *buff, int *pt, int status);
 void doublefree(char **array);
-
-
-
 #endif /* HOLBERTON_H */
