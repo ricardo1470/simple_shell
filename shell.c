@@ -89,7 +89,7 @@ int check_spaces(char *buff)
  */
 int main(int ac, char **av, char *environ[])
 {
-	char **array = NULL, *buff = NULL;
+	char **aray = NULL, *buff = NULL;
 	size_t len = 0;
 	int status = 0, exvalue = 0, *pt = &exvalue;
 
@@ -107,9 +107,9 @@ int main(int ac, char **av, char *environ[])
 			else if (!_strncmp(buff, "env\n"))
 				_environ(environ);
 			else if (buff && _strncmp(buff, "\n"))
-			{	array = _split(buff);
-				if (array[0] != NULL)
-				x(av, environ, array, buff, pt, status);
+			{	aray = _split(buff);
+				if (aray[0] != NULL)
+				x(av, environ, aray, buff, pt, status);
 			}
 		} else
 		{
@@ -117,7 +117,7 @@ int main(int ac, char **av, char *environ[])
 			free(buff), exit(exvalue);
 		}
 	}
-	free(array), free(buff);
+	free(aray), free(buff);
 	return (exvalue);
 }
 /**
