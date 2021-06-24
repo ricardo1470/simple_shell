@@ -1,4 +1,4 @@
-> # <a href="url"><img src="https://www.unifiedremote.com/remotes/raw/unifiedremote_remotes_release/main_command/icon_hires.png" align="middle" width="60" height="60"></a> 0x16. C - Simple Shell
+> # <a href="logo Shell"><img src="https://blog.hyunsub.kim/covers/bash.jpg" align="middle" width="1000" height="500"></a> 0x16. C - Simple Shell
 ---
 > ## Table of Contents
 
