@@ -1,4 +1,4 @@
-> # <a href="logo Shell"><img src="https://blog.hyunsub.kim/covers/bash.jpg" align="middle" width="1000" height="500"></a> 0x16. C - Simple Shell
+> # <a href="logo Shell"><img src="https://blog.hyunsub.kim/covers/bash.jpg" align="middle" width="800" height="400"></a> 0x16. C - Simple Shell
 ---
 > ## Table of Contents
 
