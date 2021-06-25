@@ -1,4 +1,5 @@
-> # <a href="logo Shell"><img src="https://blog.hyunsub.kim/covers/bash.jpg" align="middle" width="800" height="400"></a> 0x16. C - Simple Shell
+<a href="logo Shell"><img src="https://blog.hyunsub.kim/covers/bash.jpg" align="middle" width="800" height="400"></a> 0x16. C - Simple Shell
+
 ---
 > ## Table of Contents
 
@@ -59,6 +60,7 @@ The simple_shell is designed to execute commands in a similar manner to sh, howe
 ### Output
 Unless specified otherwise, your program *must have the exact same output* as `sh` (`/bin/sh`) as well as the exact same error output.
 The only difference is when you print an error, the name of the program must be equivalent to your `argv[0]` (See below)
+
 * Example of error with `sh`:
 ```bash
 $ echo "qwerty" | /bin/sh
@@ -67,6 +69,7 @@ $ echo "qwerty" | /bin/../bin/sh
 /bin/../bin/sh: 1: qwerty: not found
 $
 ```
+
 * Same error with your program `hsh`:
 ```bash
 $ echo "qwerty" | ./hsh
@@ -86,6 +89,7 @@ hsh main.c shell.c
 $
 ```
 But also in non-interactive mode:
+
 ```bash
 $ echo "/bin/ls" | ./hsh
 hsh main.c shell.c test_ls_2
