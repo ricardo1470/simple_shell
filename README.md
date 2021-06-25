@@ -158,7 +158,15 @@ Write a blog post describing step by step what happens when you type `ls -l` and
 * press enter after entering the command
 * to end the execution of the `simple_shell` program press `ctrl + d` or write the word `exit`
 
+---
+> ## Built with
+this project was built in `C language`
 
+---
+> ## Expressions of Gratitude
+---
+* `Tell others about this project`
+* `Invite a beer` 🍺 `or a coffee` ☕ `to someone on the team.`
 ---
 > ## Contact 💬
 > Ricardo Camayo
