@@ -168,7 +168,7 @@ Write a blog post describing step by step what happens when you type `ls -l` and
 ### | [twitter](https://twitter.com/VictorP1312) | [linkedin](https://www.linkedin.com/in/victor-paz-11b56b84/) | [mail](1555@holbertonschool.com) | [github](https://github.com/VMP1312) |
 ---
 ## License
-*simple_shell is open source and therefore free to download and use without permission.*
+*`simple_shell` is open source and therefore free to download and use without permission.*
 
 <a href="url"><img src="https://www.holbertonschool.com/holberton-logo.png" align="middle" width="100" height="30"></a>
 
