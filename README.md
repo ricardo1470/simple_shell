@@ -177,11 +177,11 @@ this project was built in `C language`
     contact with us<img src="https://github.com/ricardo1470/MEVN/blob/main/src/public/images/Handshake.gif"  alt="handshake" height="32px">
 </h2>
 
-> ### Ricardo Camayo
+### Ricardo Camayo
 | [<img src="https://github.com/ricardo1470/MEVN/blob/main/src/public/images/GitHub.png" alt="Github logo" width="34">](https://github.com/ricardo1470/README/blob/master/README.md) | [<img src="https://github.com/ricardo1470/MEVN/blob/main/src/public/images/email.png" alt="email logo" height="32">](mailto:ricardo.alfonso.camayo@gmail.com) | [<img src="https://github.com/ricardo1470/MEVN/blob/main/src/public/images/linkedin-icon.png" alt="Linkedin Logo" width="32">](https://www.linkedin.com/in/ricardo-alfonso-camayo/) | [<img src="https://github.com/ricardo1470/MEVN/blob/main/src/public/images/twitter.png" alt="Twitter Logo" width="30">](https://twitter.com/RICARDO1470) |
 |:---:|:---:|:---:|:---:|
 
-> ### Victor Paz
+### Victor Paz
 | [<img src="https://github.com/ricardo1470/MEVN/blob/main/src/public/images/GitHub.png" alt="Github logo" width="34">](https://github.com/VMP1312) | [<img src="https://github.com/ricardo1470/MEVN/blob/main/src/public/images/email.png" alt="email logo" height="32">](mailto:1555@holbertonschool.com) | [<img src="https://github.com/ricardo1470/MEVN/blob/main/src/public/images/linkedin-icon.png" alt="Linkedin Logo" width="32">](https://www.linkedin.com/in/victor-paz-11b56b84/) | [<img src="https://github.com/ricardo1470/MEVN/blob/main/src/public/images/twitter.png" alt="Twitter Logo" width="30">](https://twitter.com/VictorP1312) |
 |:---:|:---:|:---:|:---:|
 
