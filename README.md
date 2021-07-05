@@ -184,7 +184,7 @@ this project was built in `C language`
 |:---:|:---:|:---:|:---:|
 
 <a href="https://frontend.code-inspector.com/public/user/github/ricardo1470">
-   <img src="https://code-inspector.com/public/badge/user/github/ricardo1470?style=dark" alt="code inspector badge" />
+   <img src="https://frontend.code-inspector.com/public/user/github/ricardo1470?style=dark" alt="code inspector badge" />
 </a>
 
 </div>
