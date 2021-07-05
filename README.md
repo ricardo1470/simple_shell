@@ -1,4 +1,7 @@
 <a href="logo Shell"><img src="https://blog.hyunsub.kim/covers/bash.jpg" align="middle" width="800" height="400"></a> 0x16. C - Simple Shell
+---
+
+![Project](https://www.code-inspector.com/project/24537/score/svg) ![Quality](https://www.code-inspector.com/project/24537/status/svg)
 
 ---
 > ## Table of Contents
@@ -168,12 +171,25 @@ this project was built in `C language`
 * `Tell others about this project`
 * `Invite a beer` 🍺 `or a coffee` ☕ `to someone on the team.`
 ---
-> ## Contact 💬
-> Ricardo Camayo
-### | [twitter](https://twitter.com/RICARDO1470) | [linkedin](https://www.linkedin.com/in/ricardo-alfonso-camayo/) | [mail](1466@holbertonschool.com) | [github](https://github.com/ricardo1470/README/blob/master/README.md) |
 
-> Victor Paz
-### | [twitter](https://twitter.com/VictorP1312) | [linkedin](https://www.linkedin.com/in/victor-paz-11b56b84/) | [mail](1555@holbertonschool.com) | [github](https://github.com/VMP1312) |
+<div align="center">
+<h2>
+    contact with us<img src="https://github.com/ricardo1470/MEVN/blob/main/src/public/images/Handshake.gif"  alt="handshake" height="32px">
+</h2>
+
+| [<img src="https://github.com/ricardo1470/MEVN/blob/main/src/public/images/GitHub.png" alt="Github logo" width="34">](https://github.com/ricardo1470/README/blob/master/README.md) | [<img src="https://github.com/ricardo1470/MEVN/blob/main/src/public/images/email.png" alt="email logo" height="32">](mailto:ricardo.alfonso.camayo@gmail.com) | [<img src="https://github.com/ricardo1470/MEVN/blob/main/src/public/images/linkedin-icon.png" alt="Linkedin Logo" width="32">](https://www.linkedin.com/in/ricardo-alfonso-camayo/) | [<img src="https://github.com/ricardo1470/MEVN/blob/main/src/public/images/twitter.png" alt="Twitter Logo" width="30">](https://twitter.com/RICARDO1470) |
+|:---:|:---:|:---:|:---:|
+
+| [<img src="https://github.com/ricardo1470/MEVN/blob/main/src/public/images/GitHub.png" alt="Github logo" width="34">](https://github.com/VMP1312) | [<img src="https://github.com/ricardo1470/MEVN/blob/main/src/public/images/email.png" alt="email logo" height="32">](mailto:1555@holbertonschool.com) | [<img src="https://github.com/ricardo1470/MEVN/blob/main/src/public/images/linkedin-icon.png" alt="Linkedin Logo" width="32">](https://www.linkedin.com/in/victor-paz-11b56b84/) | [<img src="https://github.com/ricardo1470/MEVN/blob/main/src/public/images/twitter.png" alt="Twitter Logo" width="30">](https://twitter.com/VictorP1312) |
+|:---:|:---:|:---:|:---:|
+
+<a href="https://frontend.code-inspector.com/public/user/github/ricardo1470">
+   <img src="https://code-inspector.com/public/badge/user/github/ricardo1470?style=dark" alt="code inspector badge" />
+</a>
+
+</div>
+
+
 ---
 ## License
 *`simple_shell` is open source and therefore free to download and use without permission.*
